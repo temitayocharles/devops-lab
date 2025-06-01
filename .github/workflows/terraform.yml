@@ -30,6 +30,8 @@ jobs:
         uses: hashicorp/setup-terraform@v3
         with:
           terraform_version: 1.6.6
+      - name: Make bootstrap script executable
+        run: chmod +x ssm_bootstrap.sh
       - name: Bootstrap SSM Parameters
         run: ./ssm_bootstrap.sh
 
